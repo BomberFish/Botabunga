@@ -11,13 +11,16 @@ class Meow(commands.Cog):
         self.bot = bot
         self.meow_messages = [
           'meow',
-          'moew',
+          'meoww',
           'mow',
+          'meow UwU',
           'MEOWWWWWWWWWWWWWWWW',
           'meowwwwwww',
-          'MOEEW!!!!!!!!!!!!!!!!!!!!!!',
-          'MEOOOOWZERS',
-          'nyaa~'
+          'meoww :3',
+          'meowww :pleading_face:',
+          'MEOWWW X3',
+          'nyaa~',
+          'nyaaa~~ :3'
         ]
 
     @commands.Cog.listener()
