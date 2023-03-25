@@ -175,32 +175,32 @@ class Filter(commands.Cog):
         return False
 
     async def do_spoiler_newline_filter(self, message: discord.Message, db_guild):
-        """
-        SPOILER FILTER
-        """
-        if re.search(self.spoiler_filter, message.content, flags=re.S):
-            # ignore if dev in dev channel
-            dev_role = message.guild.get_role(db_guild.role_dev)
-            if message.channel.id == db_guild.channel_development and dev_role in message.author.roles:
-                return False
+        # """
+        # SPOILER FILTER
+        # """
+        # if re.search(self.spoiler_filter, message.content, flags=re.S):
+        #     # ignore if dev in dev channel
+        #     dev_role = message.guild.get_role(db_guild.role_dev)
+        #     if message.channel.id == db_guild.channel_development and dev_role in message.author.roles:
+        #         return False
 
-            await self.delete(message)
-            return True
+        #     await self.delete(message)
+        #     return True
 
-        for a in message.attachments:
-            if a.is_spoiler():
-                await self.delete(message)
-                return True
+        # for a in message.attachments:
+        #     if a.is_spoiler():
+        #         await self.delete(message)
+        #         return True
 
-        """
-        NEWLINE FILTER
-        """
-        if len(message.content.splitlines()) > 100:
-            dev_role = message.guild.get_role(db_guild.role_dev)
-            if not dev_role or dev_role not in message.author.roles:
-                await self.delete(message)
-                await self.ratelimit(message)
-                return True
+        # """
+        # NEWLINE FILTER
+        # """
+        # if len(message.content.splitlines()) > 100:
+        #     dev_role = message.guild.get_role(db_guild.role_dev)
+        #     if not dev_role or dev_role not in message.author.roles:
+        #         await self.delete(message)
+        #         await self.ratelimit(message)
+        #         return True
 
         return False
 
